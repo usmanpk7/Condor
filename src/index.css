@@ -1,0 +1,23 @@
+
+
+*,
+*::after,
+*::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  overflow: hidden; /* Prevent scrolling from body */
+} 
+
+.layout{
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
