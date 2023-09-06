@@ -1,15 +1,17 @@
 import React from 'react'
 import Header from '../components/conversation/Header'
 import Sidebar from '../components/conversation/Sidebar'
-import Chat from './Chat'
+import { Outlet } from "react-router-dom";
 
 
 export default function Applayout() {
   return (
     <div className='layout'>
-      <Header />
-      <Sidebar />
-      <Chat />
+     <Header />
+    <Sidebar />
+
+       <Outlet />  {/* Must Use For Routing */}
+
     </div>
   )
 }

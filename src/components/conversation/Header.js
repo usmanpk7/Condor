@@ -1,6 +1,6 @@
 import React from 'react'
 import '../../CSS/Header.css'
-import { useLogout } from '../Hooks/useLogout'
+import { useLogout } from '../../Hooks/useLogout'
 // import logout from '../../Services/logout'
 
 export default function Header() {

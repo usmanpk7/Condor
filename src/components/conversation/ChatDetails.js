@@ -1,18 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import '../../CSS/ChatContainer.css'
 import { AiOutlinePlusCircle } from 'react-icons/ai'; // Correct package: 'react-icons/ai'
 import { FiFilter } from 'react-icons/fi'; // Correct package: 'react-icons/fi'
 import { FaSync, FaTimes } from 'react-icons/fa';
 import {FiUserPlus} from 'react-icons/fi'
 import Modal from 'react-modal';
-import { useAddUser } from '../Hooks/useAddUser';
-import { useGetUser } from '../Hooks/useGetUser';
-import base_url from '../../utils/constants'
-import { getToken } from '../../Services/apiLogin'
+import { useAddUser } from '../../Hooks/useAddUser';
+import { useGetUser } from '../../Hooks/useGetUser';
+import { useNavigate } from 'react-router';
+import { GlobalContext } from '../../contextApi/Context';
+import ActiveContacts from './ActiveContacts';
+import CloseContacts from './CloseContacts';
 
 
 
-// ReactModal.setAppElement('#root');
 
 const customStyles1 = {
   content: {
@@ -46,13 +47,24 @@ export default function ChatDetails() {
   const [firstName, setfirstName]=useState('')
   const [lastName, setlastName]=useState('')
   const [email, setEmail]=useState('')
-  // const [contacts, setContacts]=useState([])
+  const [selectedItem, setSelectedItem]=useState(null)
   const [query, setQuery]=useState('')
+
+// Retrieve selectedUser from local storage when the component mounts
+useEffect(() => {
+  const storedUser = localStorage.getItem("selectedUser");
+  if (storedUser) {
+    setSelectedUser(JSON.parse(storedUser));
+  }
+}, []);
+
+  const {setSelectedUser, updateSelectedUser}=useContext(GlobalContext)
+
+  const navigate=useNavigate()
   
   const {addNewUser}=useAddUser()
 
   const { data: contacts } = useGetUser(query);
-
 
 
   function openFirstModal() {
@@ -70,6 +82,16 @@ export default function ChatDetails() {
   function closeSecondModal() {
     setSecondModalIsOpen(false);
   }
+
+  const handleItemClick = (id) => {
+    setSelectedItem(id);
+
+    const user = contacts.find((contact) => contact._id === id);
+
+    // Set the selected user's data
+    // setSelectedUser(user);
+   updateSelectedUser(user)
+  };
 
   function handleAddUser(e){
     e.preventDefault()
@@ -93,15 +115,11 @@ export default function ChatDetails() {
   }
 
   const activeTabContent = (
-    <div>
-      <p>Content for Active tab goes here.</p>
-    </div>
+    <ActiveContacts />
   );
 
   const closeTabContent = (
-    <div>
-      <p>Content for Close tab goes here.</p>
-    </div>
+    <CloseContacts />
   );
   return (
     <div className='chat-details'>
@@ -151,17 +169,26 @@ export default function ChatDetails() {
         </form>
 
         <ul className='contact-detail'>
-  {contacts?.map((contact) => (
-    <li className='contact-item' key={contact.id}>
-      <div className='name'>
-        <span>{contact.firstName} {contact.lastName}</span>
-      </div>
-      <p className='email'>{contact.email}</p>
-    </li>
-  ))}
-   </ul>
-
-   
+  {contacts ? (
+    contacts.map((contact) => (
+      <li
+        className={`contact-item ${selectedItem === contact._id ? 'selected' : ''}`}
+        key={contact._id}
+        onClick={() => handleItemClick(contact._id)}
+      >
+        <div className='name'>
+          <span>{contact.firstName} {contact.lastName}</span>
+        </div>
+        <p className='email'>{contact.email}</p>
+      </li>
+    ))
+  ) : (
+    <p>Loading contacts...</p>
+  )}
+    </ul>
+    
+      <button className='apply-btn' onClick={()=>navigate('/reply')}>Apply</button>
+      {/* <ReplyContainer selectedUser={selectedUser} /> */}
       </Modal>
 
 

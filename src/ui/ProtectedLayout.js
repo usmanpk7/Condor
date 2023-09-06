@@ -8,9 +8,10 @@ export const ProtectedLayout = ({ children }) => {
     useEffect(() => {
       if (!getToken()) {
         navigate("/login");
-      }else {
-        navigate("/conversation", { replace: true }); // Redirect to conversation page if authenticated
       }
+      // else {
+      //   navigate("/conversation", { replace: true }); // Redirect to conversation page if authenticated
+      // }
     }, []);
   
     return (

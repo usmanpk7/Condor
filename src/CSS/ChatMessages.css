@@ -1,0 +1,36 @@
+/* CSS for chat container */
+.chat-messages {
+    max-height: 700px; /* Set a maximum height for the container */
+    overflow-y: auto; /* Add a vertical scrollbar when content overflows */
+  }
+  
+  /* CSS for messages sent by me */
+  .sent-by-me {
+    text-align: right;
+  }
+  
+  /* CSS for messages sent by others */
+  .sent-by-others {
+    text-align: left;
+  }
+  
+  /* CSS for message time */
+  .message-time {
+    color: lightgrey;
+    text-align: center;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  
+  /* CSS for message content */
+  .message-content {
+    background-color: #aeb5dd;
+    padding: 5px;
+    display: inline-block;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-weight: 500;
+    font-size: 15px;
+  }
+  

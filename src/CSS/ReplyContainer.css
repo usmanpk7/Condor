@@ -1,0 +1,110 @@
+
+.reply-container{
+    margin-top: 20px;
+}
+
+.reply-header{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.user-name{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgb(70, 66, 66);
+}
+
+.back-icon{
+    margin-top: 6px;
+    color: grey;
+}
+
+.reply-body{
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    /* width: 100%; */
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 2px 3px(rgba 0,0,0.1);
+    border: 1px solid #EBEBEB;
+    height: 75vh;
+}
+
+.reply-body p{
+    padding: 30px;
+    
+}
+
+.respond-type{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    margin-top: 150px;
+}
+
+.respond-icon{
+    display: flex;
+    gap: 10px;
+}
+
+.video-icon{
+    display: flex;
+    flex-direction: column;
+    background: radial-gradient(circle, rgb(174, 191, 242) 0%, rgb(148, 162, 242) 100%);
+    align-items: center;
+    justify-content: center;
+    height: 70px; 
+    border-radius: 10px;
+    width: 100px;
+    cursor: pointer;
+    /* font-size: 15px; */
+    /* margin-top: 20px; */
+}
+
+
+.audio-icon{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    background: radial-gradient(circle, rgb(174, 191, 242) 0%, rgb(148, 162, 242) 100%);
+    align-items: center;
+    justify-content: center;
+    height: 70px; 
+    border-radius: 10px;
+    width: 100px;
+}
+
+.text-icon{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    background: radial-gradient(circle, rgb(174, 191, 242) 0%, rgb(148, 162, 242) 100%);
+    align-items: center;
+    justify-content: center;
+    height: 70px; 
+    border-radius: 10px;
+    width: 100px;
+}
+
+.icon{
+    font-size: 20px;
+    color: #fff;
+}
+
+.text{
+    font-size: 14px;
+    color: #fff;
+    padding-top: 10px;
+}
+
+.selected-user{
+    color: #2039c9;
+}

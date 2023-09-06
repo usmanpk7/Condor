@@ -7,12 +7,13 @@ import ChatHistory from '../components/conversation/ChatHistory'
 
 export default function Chat() {
 
-  const [show, setShow]=useState(false)
   return (
+    <>
     <h3 className='chat-container'>
       <ChatDetails />
-      <div className='chat-mid'>{show && <ChatMid />}</div>
+      <div className='chat-mid'> <ChatMid /></div>
       <ChatHistory />
     </h3>
+    </>
   )
 }

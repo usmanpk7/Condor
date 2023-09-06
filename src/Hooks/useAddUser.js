@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "react-query";
-import {addUser} from '../../Services/apiAddUser'
+import {addUser} from '../Services/apiAddUser'
 import { toast } from "react-hot-toast";
 
 

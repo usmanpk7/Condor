@@ -1,0 +1,60 @@
+.active-users {
+    background-color: #fff;
+    padding: 10px; /* Add padding to the list item for better spacing */
+    cursor: pointer; /* Add pointer cursor to indicate interactivity */
+    transition: background-color 0.2s ease;
+    overflow-y: scroll;
+    height: 400px;
+  }
+  
+  
+  .user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+
+  .user-info:hover {
+    background-color: #9da4cc;
+  }
+  
+ .ac {
+    background-color: #9da4cc;
+    color: #fff;
+  }
+
+ .drop-parent{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+ }
+
+  .fullName{
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .date{
+    font-size: 15px;
+    font-weight: 500; 
+  }
+
+ 
+/* Custom styles for the dropdown */
+.custom-dropdown {
+  background-color: transparent; /* Remove background color */
+  border: none; /* Remove border */
+}
+.dropdown-toggle::after {
+  content: none;
+}
+
+.custom-dropdown::after{
+  display: none;
+}
+  .dots{
+    color: black;
+    margin-top: -15px;
+  }

@@ -1,7 +1,7 @@
 // useGetUser.js
 import { useQuery } from 'react-query';
-import base_url from '../../utils/constants';
-import { getToken } from '../../Services/apiLogin';
+import base_url from '../utils/constants';
+import { getToken } from '../Services/apiLogin';
 
 export function useGetUser(searchQuery) {
   const token = getToken();

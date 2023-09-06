@@ -1,0 +1,79 @@
+
+
+/* .reply-form {
+    margin-top: 30px;
+    position: relative;
+  } */
+  .text-area{
+    width: 185vh;
+    height: 70vh;
+    outline: none;
+    border: 1px solid #fff;
+    padding: 20px;
+ 
+  }
+  
+  .reply-input {
+    height: 80vh;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 2px 3px(rgba 0, 0, 0.1);
+    border: 1px solid #EBEBEB;
+    width: 90vw;
+    vertical-align: top;
+    position: relative;
+    line-height: normal;
+    margin-top: 20px;
+  }
+  
+  ::placeholder {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    color: gray;
+  }
+  
+  .reply-input:focus {
+    border: 1px solid #EBEBEB;
+  }
+  
+  .textarea-icons {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    top: 10px;
+    right: 50px;
+    font-size: 25px;
+    color: #94A2F2;
+    cursor: pointer;
+  }
+
+  .form-btns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    z-index: 1000;
+  }
+
+  .submit-btn{
+    background-color: #94A2F2;
+    border-radius: 50%;
+    padding: 5px;
+    border: 1px solid #94A2F2;
+    color: #fff;
+    font-size: 25px;
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .cross{
+    cursor: pointer;
+  }
+  

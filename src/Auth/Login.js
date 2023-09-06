@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import '../CSS/Login.css'
 import loginIcon from '../images/Login-icon.svg'; 
 import Spinner from '../ui/Spinner'
-import { useLogin } from '../components/Hooks/useLogin';
+import { useLogin } from '../Hooks/useLogin';
 
 const REMEMBER_ME_KEY = 'rememberMe';
 
